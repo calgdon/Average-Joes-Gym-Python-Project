@@ -10,6 +10,9 @@ import repositories.lesson_repository as lesson_repository
 from models.member import Member
 import repositories.members_repository as members_repository
 
+from models.visit import Visit
+import repositories.visit_repository as visit_repository
+
 
 # Adding in a location
 
@@ -66,3 +69,26 @@ members_repository.save(member4)
 
 member5 = Member("Monica", "Geller", "03/07/1985", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
 members_repository.save(member5)
+
+# Adding in a member to a class
+
+class_member1 = Visit(member1, lesson1)
+visit_repository.save(class_member1)
+
+class_member2 = Visit(member1, lesson2)
+visit_repository.save(class_member2)
+
+class_member3 = Visit(member2, lesson2)
+visit_repository.save(class_member1)
+
+class_member4 = Visit(member3, lesson3)
+visit_repository.save(class_member4)
+
+class_member5 = Visit(member3, lesson4)
+visit_repository.save(class_member5)
+
+class_member6 = Visit(member4, lesson4)
+visit_repository.save(class_member6)
+
+class_member7 = Visit(member5, lesson4)
+visit_repository.save(class_member7)
