@@ -13,12 +13,24 @@ CREATE TABLE members (
     platinum_member BOOLEAN
 )
 
+CREATE TABLE instructors (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
+)
+
+
+CREATE TABLE locations (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
+)
+
 CREATE TABLE classes (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     time VARCHAR(255),
     date VARCHAR(255),
-    location VARCHAR(255),
-    instructor VARCHAR(255),
+    location_id SERIAL NOT NULL REFERENCES locations(id),
+    instructor_id SERIAL NOT NULL REFERENCES instructors(id),
     capacity VARCHAR(255),
 )
+
