@@ -1,6 +1,9 @@
-drop table members
-drop table classes
-drop table class_members
+DROP TABLE IF EXISTS members;
+DROP TABLE IF EXISTS instructors;
+DROP TABLE IF EXISTS locations;
+DROP TABLE IF EXISTS lessons;
+DROP TABLE IF EXISTS lessons_members;
+
 
 CREATE TABLE members (
     id SERIAL PRIMARY KEY,
@@ -11,26 +14,34 @@ CREATE TABLE members (
     tel_number VARCHAR(255),
     email VARCHAR(255),
     platinum_member BOOLEAN
-)
+);
+
 
 CREATE TABLE instructors (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255)
-)
+);
 
 
 CREATE TABLE locations (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255)
-)
+);
 
-CREATE TABLE classes (
+
+CREATE TABLE lessons (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     time VARCHAR(255),
     date VARCHAR(255),
-    location_id SERIAL NOT NULL REFERENCES locations(id),
-    instructor_id SERIAL NOT NULL REFERENCES instructors(id),
-    capacity VARCHAR(255),
-)
+    location_id SERIAL NOT NULL REFERENCES locations(id) ON DELETE CASCADE,
+    instructor_id SERIAL NOT NULL REFERENCES instructors(id) ON DELETE CASCADE,
+    capacity VARCHAR(255)
+);
 
+
+CREATE TABLE lessons_members (
+    id SERIAL PRIMARY KEY,
+    member_id SERIAL NOT NULL REFERENCES members(id) ON DELETE CASCADE,
+    lesson_id SERIAL NOT NULL REFERENCES lessons(id) ON DELETE CASCADE
+);

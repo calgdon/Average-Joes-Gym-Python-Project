@@ -1,6 +1,6 @@
-class Class:
+class Lesson:
 
-    def __init__(self, name, time, date, location, instructor, capacity, id):
+    def __init__(self, name, time, date, location, instructor, capacity, id=None):
         self.name = name
         self.time = time
         self.date = date
