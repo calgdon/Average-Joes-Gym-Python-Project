@@ -8,3 +8,20 @@ def save(lesson):
     results = run_sql(sql, values)
     id = results[0]['id']
     lesson.id = id
+
+# def select(lesson):
+
+
+
+# def select_all(lesson:)
+
+
+
+
+def update(lesson):
+    sql = "UPDATE lessons SET(name, time, date, location_id, instructor_id, capacity) = ( %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [lesson.name, lesson.time, lesson.date, lesson.location.id, lesson.instructor.id, lesson.capacity, lesson.id]
+    run_sql(sql, values)
+
+
+# def delete(lesson):
