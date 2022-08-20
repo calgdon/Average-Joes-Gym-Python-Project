@@ -33,3 +33,26 @@ def select_all():
         instructor = Instructor(result['name'], result['id'])
         instructors.append(instructor)
     return instructors
+
+
+# Update an instructor
+
+def update(instructor):
+    sql = "UPDATE instructors SET (name) = (%s) WHERE id = %s"
+    values = [instructor.name, instructor.id]
+    run_sql(sql, values)
+
+
+# Delete a instructor by id
+
+def delete(id):
+    sql = "DELETE FROM instructors WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+
+# Delete all instructors
+
+def delete_all():
+    sql = "DELETE FROM instructors"
+    run_sql(sql)

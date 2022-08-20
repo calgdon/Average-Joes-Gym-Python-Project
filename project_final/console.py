@@ -116,7 +116,7 @@ print(instructor.__dict__)
 
 # Select all lessons
 
-
+print(lesson_repository.select_all())
 
 # Select a single lesson
 
