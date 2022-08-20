@@ -92,3 +92,30 @@ visit_repository.save(class_member6)
 
 class_member7 = Visit(member5, lesson4)
 visit_repository.save(class_member7)
+
+
+# Select all members
+
+print(members_repository.select_all())
+
+
+# Select a single member
+
+member = members_repository.select(1)
+print(member.__dict__)
+
+# Select all instructors
+
+
+
+# Select a single instructor
+
+
+instructor = instructor_repository.select(1)
+print(instructor.__dict__)
+
+# Select all lessons
+
+
+
+# Select a single lesson
