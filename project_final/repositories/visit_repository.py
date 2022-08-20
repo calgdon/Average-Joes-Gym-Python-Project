@@ -7,6 +7,8 @@ from models.member import Member
 import repositories.lesson_repository as lesson_repository
 import repositories.members_repository as member_repository
 
+# Add a member into a lesson
+
 def save(visit):
     sql = "INSERT INTO visits (member_id, lesson_id) VALUES (%s, %s) RETURNING id"
     values = (visit.member.id, visit.lesson.id)
