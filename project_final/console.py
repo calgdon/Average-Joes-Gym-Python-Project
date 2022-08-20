@@ -106,7 +106,7 @@ print(member.__dict__)
 
 # Select all instructors
 
-
+print(instructor_repository.select_all())
 
 # Select a single instructor
 
@@ -119,3 +119,12 @@ print(instructor.__dict__)
 
 
 # Select a single lesson
+
+lesson = lesson_repository.select(1)
+print(lesson)
+
+
+# Select a single location
+
+location = location_repository.select(1)
+print(location.__dict__)

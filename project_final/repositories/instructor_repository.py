@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 from models.instructor import Instructor
 
-# save a new instructor
+# Save a new instructor
 
 def save(instructor):
     sql = "INSERT INTO instructors (name) VALUES (%s) RETURNING id"
@@ -10,7 +10,7 @@ def save(instructor):
     id = results[0]['id']
     instructor.id = id
 
-# select an instructor by ID
+# Select an instructor by ID
 
 def select(id):
     sql = "SELECT * FROM instructors WHERE id = %s"
@@ -21,3 +21,15 @@ def select(id):
         result = results[0]
         instructor = Instructor(result['name'], result['id'])
     return instructor
+
+
+# Select all instructors
+
+def select_all():
+    instructors = []
+    sql = "SELECT * FROM instructors"
+    results = run_sql(sql)
+    for result in results:
+        instructor = Instructor(result['name'], result['id'])
+        instructors.append(instructor)
+    return instructors
