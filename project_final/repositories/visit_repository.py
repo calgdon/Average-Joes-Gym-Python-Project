@@ -15,6 +15,25 @@ def save(visit):
     return visit
 
 
+# View all members in a certain lesson
+
+def select_all_members_in_lesson(lesson):
+    attendees = []
+    sql = "SELECT members.id FROM members INNER JOIN visits ON members.id = visits.member_id WHERE visits.lesson_id = %s"
+    values = [lesson.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        attendee = member_repository.select(row[0])
+        attendees.append(attendee)
+    return attendees
+
+
+    #     attendee = Member(row['first_name'], row['last_name'], row['date_of_birth'], row['address'], row['tel_number'], row['email'], row['platinum_member'], row['id'])
+    #     attendees.append(attendee)
+    # return attendees
+
+
 # Delete a visit by id
 
 def delete(id):

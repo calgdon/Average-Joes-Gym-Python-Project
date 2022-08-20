@@ -53,7 +53,7 @@ def update(lesson):
 # Delete a lesson by id
 
 def delete(id):
-    sql = "DELETE FROM lessonss WHERE id = %s"
+    sql = "DELETE FROM lessons WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
@@ -63,3 +63,16 @@ def delete(id):
 def delete_all():
     sql = "DELETE FROM lessons"
     run_sql(sql)
+
+
+
+# Check capacity of the lesson
+
+def check_capacity(lesson):
+    sql = "SELECT lessons.id, lessons.capacity FROM lessons INNER JOIN visits ON visits.lesson_id = lessons.id WHERE lessons.id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    total = len(results)
+    print(total)
+    
+

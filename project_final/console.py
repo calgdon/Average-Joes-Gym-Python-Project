@@ -79,7 +79,7 @@ class_member2 = Visit(member1, lesson2)
 visit_repository.save(class_member2)
 
 class_member3 = Visit(member2, lesson2)
-visit_repository.save(class_member1)
+visit_repository.save(class_member3)
 
 class_member4 = Visit(member3, lesson3)
 visit_repository.save(class_member4)
@@ -127,3 +127,9 @@ print(lesson)
 
 location = location_repository.select(1)
 print(location.__dict__)
+
+
+# View all members in a certain lesson
+
+attendees = visit_repository.select_all_members_in_lesson(lesson2)
+print(attendees)
