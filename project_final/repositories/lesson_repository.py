@@ -65,14 +65,13 @@ def delete_all():
     run_sql(sql)
 
 
+# Check capacity of the lesson - this is returning a list
 
-# Check capacity of the lesson
-
-def check_capacity(lesson):
-    sql = "SELECT lessons.id, lessons.capacity FROM lessons INNER JOIN visits ON visits.lesson_id = lessons.id WHERE lessons.id = %s"
-    values = [id]
+def get_capacity(lesson):
+    sql = "SELECT lessons.capacity FROM lessons INNER JOIN visits ON visits.lesson_id = lessons.id WHERE lessons.id = %s"
+    values = [lesson.id]
     results = run_sql(sql, values)
-    total = len(results)
-    print(total)
+    return results[0]
+
     
 

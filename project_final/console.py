@@ -131,5 +131,17 @@ print(location.__dict__)
 
 # View all members in a certain lesson
 
-attendees = visit_repository.select_all_members_in_lesson(lesson2)
+attendees = visit_repository.select_all_members_in_lesson(lesson4)
 print(attendees)
+
+
+#  Get the capacity of a lesson
+
+capacity = lesson_repository.get_capacity(lesson1)
+print(capacity)
+
+
+# Check if member can be added to a lesson
+
+# capacity_check = visit_repository.check_capacity_if_member_can_be_added_to_lesson(lesson2)
+# print(capacity_check) 

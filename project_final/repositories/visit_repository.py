@@ -29,9 +29,14 @@ def select_all_members_in_lesson(lesson):
     return attendees
 
 
-    #     attendee = Member(row['first_name'], row['last_name'], row['date_of_birth'], row['address'], row['tel_number'], row['email'], row['platinum_member'], row['id'])
-    #     attendees.append(attendee)
-    # return attendees
+# Check a member can be added to a lesson
+
+# def check_capacity_if_member_can_be_added_to_lesson(lesson):
+#     current_capacity = select_all_members_in_lesson(lesson)
+#     class_capacity = lesson_repository.get_capacity(lesson)
+
+
+
 
 
 # Delete a visit by id
