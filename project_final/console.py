@@ -110,7 +110,6 @@ print(instructor_repository.select_all())
 
 # Select a single instructor
 
-
 instructor = instructor_repository.select(1)
 print(instructor.__dict__)
 

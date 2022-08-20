@@ -22,6 +22,14 @@ def select(id):
     return location
 
 
+# Update a location
+
+def update(location):
+    sql = "UPDATE locations SET (name) = (%s) WHERE id = %s"
+    values = [location.name, location.id]
+    run_sql(sql, values)
+
+
 # Delete a location by id
 
 def delete(id):
