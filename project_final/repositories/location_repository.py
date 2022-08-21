@@ -22,6 +22,18 @@ def select(id):
     return location
 
 
+# Select all locations
+
+def select_all():
+    locations = []
+    sql = "SELECT * FROM locations"
+    results = run_sql(sql)
+    for row in results:
+        location = Location(row['name'], row['id'])
+        locations.append(location)
+    return locations
+
+
 # Update a location
 
 def update(location):

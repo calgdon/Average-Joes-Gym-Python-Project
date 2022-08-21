@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add Member To A Lesson</h2>
+
+<form action="/visits" method="POST">
+    <div>
+        <label for="member">Member:</label>
+        <select name="members" id="name">
+            {% for member in members %}
+            <option value="{{ member.first_name }}  {{member.last_name }}">
+                {{ member.first_name }}  {{member.last_name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="lesson">Lesson:</label>
+        <select name="lesson_name" id="name">
+            {% for lesson in lessons %}
+            <option value="{{ lesson.name }}">
+                {{ lesson.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+        <input type="submit">
+    </div>
+
+
+
+
+{% endblock %}
