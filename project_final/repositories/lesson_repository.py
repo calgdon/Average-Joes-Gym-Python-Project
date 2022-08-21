@@ -71,7 +71,7 @@ def get_capacity(lesson):
     sql = "SELECT lessons.capacity FROM lessons INNER JOIN visits ON visits.lesson_id = lessons.id WHERE lessons.id = %s"
     values = [lesson.id]
     results = run_sql(sql, values)
-    return results[0]
+    return results[0][0]
 
     
 

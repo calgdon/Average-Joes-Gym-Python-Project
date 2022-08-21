@@ -137,11 +137,17 @@ print(attendees)
 
 #  Get the capacity of a lesson
 
-capacity = lesson_repository.get_capacity(lesson1)
+capacity = lesson_repository.get_capacity(lesson4)
 print(capacity)
 
 
-# Check if member can be added to a lesson
+# Check the number of members in a lesson
 
-# capacity_check = visit_repository.check_capacity_if_member_can_be_added_to_lesson(lesson2)
-# print(capacity_check) 
+members_in_lesson = visit_repository.number_of_members_in_lesson(lesson4)
+print(members_in_lesson)
+
+
+# Check if member can be added to lesson
+
+check_to_add_member_to_lesson = visit_repository.check_if_member_can_be_added_to_lesson(lesson4)
+print(check_to_add_member_to_lesson)

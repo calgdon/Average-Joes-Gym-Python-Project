@@ -20,8 +20,18 @@ def lessons():
 
 # Viewing a single lesson
 
+@lessons_blueprint.route("/lessons/<id>")
+def show_lesson(id):
+    lesson = lesson_repository.select(id)
+    instructor = instructor_repository.select(id)
+    location = location_repository.select(id)
+    return render_template("lessons/single_lesson.html", lesson=lesson, location=location,instructor=instructor)
 
 
+# Edit a lesson
+
+
+# Update the lesson
 
 
 # Delete a single lesson

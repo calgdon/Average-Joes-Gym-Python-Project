@@ -34,6 +34,9 @@ def edit_location(id):
     return render_template("locations/edit_location.html", location=location)
 
 
+# Update the location
+
+
 # Delete a single location
 
 @locations_blueprint.route("/locations/<id>/delete", methods=["POST"])

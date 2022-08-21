@@ -32,3 +32,16 @@ def show_single_instructor(id):
 def edit_instructor(id):
     instructor = instructor_repository.select(id)
     return render_template("instructors/edit_location.html", instructor=instructor)
+
+
+# Update the instructor
+
+
+
+
+# Delete a single instructor
+
+@instructors_blueprint.route("/instructors/<id>/delete", methods=["POST"])
+def delete_instructor(id):
+    instructor_repository.delete(id)
+    return redirect("/instructors")

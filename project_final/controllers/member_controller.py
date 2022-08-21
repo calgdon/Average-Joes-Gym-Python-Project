@@ -34,6 +34,11 @@ def edit_member(id):
     return render_template("members/edit_member.html", member=member)
 
 
+
+# Update the member
+
+
+
 # Delete a single member
 
 @members_blueprint.route("/members/<id>/delete", methods=["POST"])

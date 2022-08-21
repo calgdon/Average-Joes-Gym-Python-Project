@@ -1,3 +1,4 @@
+from pickle import TRUE
 from db.run_sql import run_sql
 
 from models.visit import Visit
@@ -30,18 +31,27 @@ def select_all_members_in_lesson(lesson):
         attendees.append(attendee)
     return attendees
 
+# Get the number of members in a certain lesson 
 
-# Check a member can be added to a lesson
+def number_of_members_in_lesson(lesson):
+    result = select_all_members_in_lesson(lesson)
+    return len(result)
 
-# def check_capacity_if_member_can_be_added_to_lesson(lesson):
-#     current_capacity = select_all_members_in_lesson(lesson)
-#     class_capacity = lesson_repository.get_capacity(lesson)
+# Check if there is space to add member to a lesson
+
+def check_if_member_can_be_added_to_lesson(lesson):
+    current_members_in_lesson = number_of_members_in_lesson(lesson)
+    capacity_of_lesson = lesson_repository.get_capacity(lesson)
+    space_for_members = int(capacity_of_lesson) - int(current_members_in_lesson)
+    if space_for_members >= 1:
+        return True
 
 
 
 
 
-# Delete a visit by id
+
+# Delete all members from a visit by id
 
 def delete(id):
     sql = "DELETE FROM visits WHERE id = %s"
