@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Check Out All Our Average Joe's</h2>
+<h3>Click On Each Member For More Information</h3>
+
+
+{% for lesson in lessons %}
+
+<section>
+    <a href="/lessons/{{ lesson.id }}">
+        <p>{{ lesson.name}}</p>
+    </a>
+</section>
+
+
+{% endfor %}
+{% endblock %}
