@@ -36,7 +36,7 @@ instructor_repository.save(instructor2)
 instructor3 = Instructor("Jane Fonda")
 instructor_repository.save(instructor3)
 
-instructor4 = Instructor("Richard Simmons")
+instructor4 = Instructor("Patches O'Houlihan")
 instructor_repository.save(instructor4)
 
 # Adding in a lesson
@@ -50,7 +50,7 @@ lesson_repository.save(lesson2)
 lesson3 = Lesson("Arobics", "12:00", "22/09/2022", location3, instructor1, 10)
 lesson_repository.save(lesson3)
 
-lesson4 = Lesson("Bums and Tums", "14:00", "22/09/2022", location1, instructor4, 10)
+lesson4 = Lesson("Dodgeball", "14:00", "22/09/2022", location1, instructor4, 10)
 lesson_repository.save(lesson4)
 
 #  Adding in a member

@@ -10,7 +10,25 @@ import repositories.location_repository as location_repository
 instructors_blueprint = Blueprint("instructors", __name__)
 
 
+# Index page for displaying all instructors
+
 @instructors_blueprint.route("/instructors")
 def instructors():
     instructors = instructor_repository.select_all()
     return render_template("instructors/all_instructors.html", instructors=instructors)
+
+
+# Viewing a single instructor
+
+@instructors_blueprint.route("/instructors/<id>")
+def show_single_instructor(id):
+    instructor = instructor_repository.select(id)
+    return render_template("instructors/single_instructor.html", instructor=instructor)
+
+
+# Edit an instructor
+
+@instructors_blueprint.route("/instructors/<id>/edit")
+def edit_instructor(id):
+    instructor = instructor_repository.select(id)
+    return render_template("instructors/edit_location.html", instructor=instructor)

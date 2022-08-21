@@ -10,7 +10,23 @@ import repositories.location_repository as location_repository
 lessons_blueprint = Blueprint("lessons", __name__)
 
 
+# Index page for displaying all lessons
+
 @lessons_blueprint.route("/lessons")
 def lessons():
     lessons = lesson_repository.select_all()
     return render_template("lessons/all_lessons.html", lessons=lessons)
+
+
+# Viewing a single lesson
+
+
+
+
+
+# Delete a single lesson
+
+@lessons_blueprint.route("/lessons/<id>/delete", methods=["POST"])
+def delete_lesson(id):
+    lesson_repository.delete(id)
+    return redirect("/lessons")
