@@ -151,3 +151,8 @@ print(members_in_lesson)
 
 check_to_add_member_to_lesson = visit_repository.check_if_member_can_be_added_to_lesson(lesson4)
 print(check_to_add_member_to_lesson)
+
+# Check the number of spaces available per lesson
+
+number_of_spaces_available = visit_repository.number_of_spaces_available_per_lesson(lesson4)
+print(number_of_spaces_available)

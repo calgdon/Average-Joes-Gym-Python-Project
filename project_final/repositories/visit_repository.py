@@ -46,7 +46,13 @@ def check_if_member_can_be_added_to_lesson(lesson):
     if space_for_members >= 1:
         return True
 
+# Return the number of spaces available
 
+def number_of_spaces_available_per_lesson(lesson):
+    current_members_in_lesson = number_of_members_in_lesson(lesson)
+    capacity_of_lesson = lesson_repository.get_capacity(lesson)
+    space_for_members = int(capacity_of_lesson) - int(current_members_in_lesson)
+    return space_for_members
 
 
 
