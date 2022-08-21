@@ -10,11 +10,17 @@ visits_blueprint = Blueprint("visits", __name__)
 
 # index page for adding member into a lesson
 
-@visits_blueprint.route("/visits")
+@visits_blueprint.route("/visits" )
 def visits():
     members = member_repository.select_all()
     lessons = lesson_repository.select_all()
     instructors = instructor_repository.select_all()
     locations = location_repository.select_all()
     return render_template("visits/index.html", members=members, lessons=lessons, instructors=instructors, locations=locations)
+
+# index page for when submitting the form to add member to lesson
+
+
+# @visits_blueprint.route("/visits", methods=["POST"])
+# def add_member():
 
