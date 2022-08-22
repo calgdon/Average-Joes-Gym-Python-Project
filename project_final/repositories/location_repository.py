@@ -4,8 +4,8 @@ from models.location import Location
 # Save a single location
 
 def save(location):
-    sql = "INSERT INTO locations (name) VALUES (%s) RETURNING id"
-    values = [location.name]
+    sql = "INSERT INTO locations (name, capacity) VALUES (%s, %s) RETURNING id"
+    values = [location.name, location.capacity]
     results = run_sql(sql, values)
     id = results[0]['id']
     location.id = id
@@ -18,7 +18,7 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        location = Location(result['name'], result['id'])
+        location = Location(result['name'], result['capacity'], result['id'])
     return location
 
 
@@ -29,7 +29,7 @@ def select_all():
     sql = "SELECT * FROM locations"
     results = run_sql(sql)
     for row in results:
-        location = Location(row['name'], row['id'])
+        location = Location(row['name'], row['capacity'], row['id'])
         locations.append(location)
     return locations
 
@@ -37,8 +37,8 @@ def select_all():
 # Update a location
 
 def update(location):
-    sql = "UPDATE locations SET (name) = (%s) WHERE id = %s"
-    values = [location.name, location.id]
+    sql = "UPDATE locations SET (name, capacity) = (%s, %s) WHERE id = %s"
+    values = [location.name, location.capacity, location.id]
     run_sql(sql, values)
 
 

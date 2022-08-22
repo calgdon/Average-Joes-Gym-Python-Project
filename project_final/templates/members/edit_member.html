@@ -8,7 +8,7 @@
 
 <div class="editing_table">
 
-<form action="/members/<id>/edit" method="post">
+<form action="/members/ {{member.id}} /edit" method="post">
     <label for="first_name">First Name:</label><br>
     <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}"><br>
     <label for="last_name">Last Name:</label><br>

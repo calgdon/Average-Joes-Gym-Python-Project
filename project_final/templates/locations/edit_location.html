@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>You are editing {{ location.name}}</h1>
+
+
+<div class="editing_table">
+
+<form action="/locations/{{location.id}}/edit" method="post">
+    <label for="name">Room Name:</label><br>
+    <input type="text" id="name" name="name" value="{{ location.name }}"><br>
+    <label for="capacity">Room Capacity:</label><br>
+    <input type="number" min="1" id="capacity" name="capacity" value="{{ location.capacity }}"><br>
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+
+
+{% endblock %}

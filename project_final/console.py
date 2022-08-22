@@ -16,13 +16,13 @@ import repositories.visit_repository as visit_repository
 
 # Adding in a location
 
-location1 = Location("Red Room")
+location1 = Location("Red Room", 10)
 location_repository.save(location1)
 
-location2 = Location("Blue Room")
+location2 = Location("Blue Room", 20)
 location_repository.save(location2)
 
-location3 = Location("Green Room")
+location3 = Location("Green Room", 30)
 location_repository.save(location3)
 
 # Adding in an instructor

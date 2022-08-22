@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="add_new_table">
+
+<form action="/locations/new" method="post">
+    <label for="name">Room Name:</label> <br>
+    <input type="text" id="name" name="name" required><br>
+    <label for="capacity">Room Capacity:</label><br>
+    <input type="number" min="1" id="capacity" name="capacity" required><br>
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+
+
+
+
+
+{% endblock %}

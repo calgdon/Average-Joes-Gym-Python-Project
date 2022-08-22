@@ -40,7 +40,7 @@ def select_all():
 # Update a member by name
 
 def update(member):
-    sql = "UPDATE members SET(first_name, last_name, date_of_birth, address, tel_number, email, platinum_member) = ( %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE members SET (first_name, last_name, date_of_birth, address, tel_number, email, platinum_member) = ( %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [member.first_name, member.last_name, member.date_of_birth, member.address, member.tel_number, member.email, member.platinum_member, member.id]
     run_sql(sql, values)
 

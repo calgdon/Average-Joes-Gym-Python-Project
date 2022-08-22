@@ -25,7 +25,8 @@ CREATE TABLE instructors (
 
 CREATE TABLE locations (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
+    name VARCHAR(255),
+    capacity VARCHAR(255)
 );
 
 
