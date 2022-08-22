@@ -41,16 +41,16 @@ instructor_repository.save(instructor4)
 
 # Adding in a lesson
 
-lesson1 = Lesson("Yoga", "09:00", "22/08/2022", location1, instructor1, 20)
+lesson1 = Lesson("Yoga", "09:00", "2022/08/25", location1, instructor1, 20)
 lesson_repository.save(lesson1)
 
-lesson2 = Lesson("Pilates", "10:00", "22/09/2022", location2, instructor2, 15)
+lesson2 = Lesson("Pilates", "10:00", "2022/08/25", location2, instructor2, 15)
 lesson_repository.save(lesson2)
 
-lesson3 = Lesson("Arobics", "12:00", "22/09/2022", location3, instructor1, 10)
+lesson3 = Lesson("Arobics", "12:00", "2022/08/25", location3, instructor1, 10)
 lesson_repository.save(lesson3)
 
-lesson4 = Lesson("Dodgeball", "14:00", "22/09/2022", location1, instructor4, 10)
+lesson4 = Lesson("Dodgeball", "14:00", "2022/08/25", location1, instructor4, 10)
 lesson_repository.save(lesson4)
 
 #  Adding in a member

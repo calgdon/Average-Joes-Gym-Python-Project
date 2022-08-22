@@ -7,10 +7,10 @@
 
 <form action="/visits" method="POST">
     <div>
-        <label for="member">Member:</label>
-        <select name="members" id="name">
+        <label for="member_id">Member:</label>
+        <select name="member_id" id="member_id">
             {% for member in members %}
-            <option value="{{ member.first_name }}  {{member.last_name }}">
+            <option value="{{ member.id }}">
                 {{ member.first_name }}  {{member.last_name }}
             </option>
             {% endfor %}
@@ -18,10 +18,10 @@
     </div>
 
     <div>
-        <label for="lesson">Lesson:</label>
-        <select name="lesson_name" id="name">
+        <label for="lesson_id">Lesson:</label>
+        <select name="lesson_id" id="lesson_id">
             {% for lesson in lessons %}
-            <option value="{{ lesson.name }}">
+            <option value="{{ lesson.id }}">
                 {{ lesson.name }}
             </option>
             {% endfor %}

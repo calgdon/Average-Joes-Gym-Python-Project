@@ -31,7 +31,9 @@ def show_lesson(id):
 @lessons_blueprint.route("/lessons/<id>/edit")
 def edit_lesson(id):
     lesson = lesson_repository.select(id)
-    return render_template("/lessons/edit_lesson.html", lesson=lesson)
+    locations = location_repository.select_all()
+    instructors = instructor_repository.select_all()
+    return render_template("/lessons/edit_lesson.html", lesson=lesson, locations=locations, instructors=instructors)
 
 # Update the lesson
 

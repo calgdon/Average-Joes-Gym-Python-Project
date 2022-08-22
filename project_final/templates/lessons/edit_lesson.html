@@ -3,14 +3,39 @@
 
 <h2>Edit {{lesson.name}}</h2>
 
+<div class="editing_table">
 
-<form action="/humans/{{ human.id }}" method="POST">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="{{ human.name }}">
-        <input type="submit">
+<form action="/lessons/ {{lesson.id}} /edit" method="post">
+    <label for="name">Lesson Name:</label><br>
+    <input type="text" id="name" name="name" value="{{ lesson.name }}"><br>
+    <label for="time">Time:</label><br>
+    <input type="time" id="time" name="time" value="{{ lesson.time }}"><br>
+    <label for="date">Date:</label><br>
+    <input type="date" id="date" name="date" value="{{ lesson.date }}"><br>
+
+    <label for="location_id">Location:</label>
+        <select name="location_id" id="location_id">
+            {% for location in locations %}
+            <option value="{{ location.id }}" selected={{lesson.location}}>
+                {{ location.name }}
+            </option>
+            {% endfor %}
+        </select>
     </div>
-</form>
 
-{% endfor %}
+    <div>
+        <label for="instructor_id">Instructor:</label>
+        <select name="instructor_id" id="instructor_id">
+            {% for instructor in instructors %}
+            <option value="{{ instructor.id }}" selected={{lesson.instructor}}>
+                {{ instructor.name }}
+            </option>
+            {% endfor %}<br>
+        </select>
+    <br><label for="capacity">Lesson Capacity:</label><br>
+    <input type="number" id="capacity" name="capacity" value="{{ lesson.capacity }}"><br>
+    <input type="submit" value="Submit">
+</form>
+</div>
+
 {% endblock %}

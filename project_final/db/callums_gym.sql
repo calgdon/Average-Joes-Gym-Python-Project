@@ -33,8 +33,8 @@ CREATE TABLE locations (
 CREATE TABLE lessons (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    time VARCHAR(255),
-    date VARCHAR(255),
+    time TIME,
+    date DATE,
     location_id SERIAL NOT NULL REFERENCES locations(id) ON DELETE CASCADE,
     instructor_id SERIAL NOT NULL REFERENCES instructors(id) ON DELETE CASCADE,
     capacity VARCHAR(255)

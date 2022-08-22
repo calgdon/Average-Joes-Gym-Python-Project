@@ -6,6 +6,8 @@ import repositories.members_repository as member_repository
 import repositories.instructor_repository as instructor_repository
 import repositories.location_repository as location_repository
 
+from models.visit import Visit
+
 visits_blueprint = Blueprint("visits", __name__)
 
 # index page for adding member into a lesson
@@ -18,9 +20,14 @@ def visits():
     locations = location_repository.select_all()
     return render_template("visits/index.html", members=members, lessons=lessons, instructors=instructors, locations=locations)
 
-# index page for when submitting the form to add member to lesson
 
-
-# @visits_blueprint.route("/visits", methods=["POST"])
-# def add_member():
-
+@visits_blueprint.route("/visits", methods=["POST"])
+def add_visit():
+    member_id = request.form["member_id"]
+    lesson_id = request.form["lesson_id"]
+    new_member = member_repository.select(member_id)
+    new_lesson = lesson_repository.select(lesson_id)
+    new_visit = Visit(new_member, new_lesson)
+    visit_repository.save(new_visit)
+    return redirect ("/")
+    

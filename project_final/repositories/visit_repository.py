@@ -12,7 +12,7 @@ import repositories.members_repository as member_repository
 
 def save(visit):
     sql = "INSERT INTO visits (member_id, lesson_id) VALUES (%s, %s) RETURNING id"
-    values = (visit.member.id, visit.lesson.id)
+    values = [visit.member.id, visit.lesson.id]
     results = run_sql(sql, values)
     visit.id = results[0]['id']
     return visit
