@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add Another Lesson To Avergae Joe's</h2>
+<h3>????????????????????????????????//</h3>
+
+<div class="new_item" >
+
+<form action="/lessons/add_lessons" method="POST">
+    <div>
+        <label for="member">Member:</label>
+        <select name="members" id="name">
+            {% for member in members %}
+            <option value="{{ member.first_name }}  {{member.last_name }}">
+                {{ member.first_name }}  {{member.last_name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="lesson">Lesson:</label>
+        <select name="lesson_name" id="name">
+            {% for lesson in lessons %}
+            <option value="{{ lesson.name }}">
+                {{ lesson.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+        <input type="submit">
+    </div>
+
+</div>
+
+
+
+
+{% endfor %}
+{% endblock %}

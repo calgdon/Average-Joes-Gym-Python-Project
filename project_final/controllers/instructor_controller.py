@@ -41,7 +41,7 @@ def edit_instructor(id):
 
 # Delete a single instructor
 
-@instructors_blueprint.route("/instructors/<id>/delete", methods=["POST"])
+@instructors_blueprint.route("/instructors/<id>/delete", methods=["GET"])
 def delete_instructor(id):
     instructor_repository.delete(id)
     return redirect("/instructors")

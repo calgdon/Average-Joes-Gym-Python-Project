@@ -23,20 +23,22 @@ def lessons():
 @lessons_blueprint.route("/lessons/<id>")
 def show_lesson(id):
     lesson = lesson_repository.select(id)
-    instructor = instructor_repository.select(id)
-    location = location_repository.select(id)
-    return render_template("lessons/single_lesson.html", lesson=lesson, location=location,instructor=instructor)
+    return render_template("lessons/single_lesson.html", lesson=lesson)
 
 
 # Edit a lesson
 
+@lessons_blueprint.route("/lessons/<id>/edit")
+def edit_lesson(id):
+    lesson = lesson_repository.select(id)
+    return render_template("/lessons/edit_lesson.html", lesson=lesson)
 
 # Update the lesson
 
 
 # Delete a single lesson
 
-@lessons_blueprint.route("/lessons/<id>/delete", methods=["POST"])
+@lessons_blueprint.route("/lessons/<id>/delete", methods=["GET"])
 def delete_lesson(id):
     lesson_repository.delete(id)
     return redirect("/lessons")

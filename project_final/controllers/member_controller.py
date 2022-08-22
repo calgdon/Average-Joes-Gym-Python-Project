@@ -6,6 +6,8 @@ import repositories.members_repository as member_repository
 import repositories.instructor_repository as instructor_repository
 import repositories.location_repository as location_repository
 
+from models.member import Member
+
 
 members_blueprint = Blueprint("members", __name__)
 
@@ -37,11 +39,47 @@ def edit_member(id):
 
 # Update the member
 
+@members_blueprint.route("/members/<id>/edit", methods=["POST"])
+def update_member(id):
+    first_name = request.form["first_name"]
+    last_name = request.form["last_name"]
+    date_of_birth = request.form["date_of_birth"]
+    address = request.form["address"]
+    tel_number = request.form["tel_number"]
+    email = request.form["email"]
+    platinum_member = request.form["platinum_member"]
+    id = id
+    updated_member = Member(first_name, last_name, date_of_birth, address, tel_number, email, platinum_member, id)
+    member_repository.update(updated_member)
+    return redirect("/members")
+
+
+# Add a new member
+
+@members_blueprint.route("/members/new")
+def new_member():
+    return render_template("members/new_member.html")
+
+
+# Post of new member
+
+@members_blueprint.route("/members/new", methods=["POST"])
+def add_new_member():
+    first_name = request.form["first_name"]
+    last_name = request.form["last_name"]
+    date_of_birth = request.form["date_of_birth"]
+    address = request.form["address"]
+    tel_number = request.form["tel_number"]
+    email = request.form["email"]
+    platinum_member = request.form["platinum_member"]
+    new_member = Member(first_name, last_name, date_of_birth, address, tel_number, email, platinum_member)
+    member_repository.save(new_member)
+    return redirect("/members")
 
 
 # Delete a single member
 
-@members_blueprint.route("/members/<id>/delete", methods=["POST"])
+@members_blueprint.route("/members/<id>/delete", methods=["GET"])
 def delete_member(id):
     member_repository.delete(id)
     return redirect("/members")

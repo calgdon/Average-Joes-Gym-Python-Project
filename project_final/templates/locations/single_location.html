@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{location.name}} </h1>
+
+
+<a href="/locations/{{ location.id }}/edit">Click Here To Edit Lesson</a>
+<a href="/locations/{{ location.id }}/delete">Click Here To Delete Lesson</a>
+
+
+
+{% endblock %}

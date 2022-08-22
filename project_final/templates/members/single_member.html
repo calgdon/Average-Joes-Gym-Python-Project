@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> {{member.first_name}} </h1>
+<h1> {{member.first_name}} {{member.last_name}}</h1>
+
+
+<a href="/members/{{ member.id }}/edit">Click Here To Edit {{ member.first_name}} {{member.last_name}}</a>
+<a href="/members/{{ member.id }}/delete">Click Here To Delete {{ member.first_name}} {{member.last_name}}</a>
 
 
 

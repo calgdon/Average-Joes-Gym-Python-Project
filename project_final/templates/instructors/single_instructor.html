@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{instructor.name}} </h1>
+
+
+
+<a href="/instructors/{{ instructor.id }}/edit">Click Here To Edit {{instructor.name}} </a>
+<a href="/instructors/{{ instructor.id }}/delete">Click Here To Delete {{instructor.name}} </a>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>You are editing {{member.first_name}} {{member.last_name}} </h1>
+
+
+<div class="editing_table">
+
+<form action="/members/<id>/edit" method="post">
+    <label for="first_name">First Name:</label><br>
+    <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}"><br>
+    <label for="last_name">Last Name:</label><br>
+    <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}"><br>
+    <label for="date_of_birth">Date of Birth:</label><br>
+    <input type="date" id="date_of_birth" name="date_of_birth" value="{{ member.date_of_birth }}"><br>
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address" value="{{ member.address }}"><br>
+    <label for="tel_number">Telephone Number:</label><br>
+    <input type="tel" id="tel_number" name="tel_number" value="{{ member.tel_number }}"><br>
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" name="email" value="{{ member.email }}"><br>
+    <label for="platinum_member">Platinum Member:</label>
+    <select id="platinum_member" name="platinum_member">
+    <option value="True">Yes</option>
+    <option value="False" selected>No</option>
+    </select>
+
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+
+
+{% endblock %}

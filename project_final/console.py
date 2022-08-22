@@ -55,19 +55,19 @@ lesson_repository.save(lesson4)
 
 #  Adding in a member
 
-member1 = Member("Ross", "Geller", "01/01/1980", "19 Grove Street, New York", "07770123456", "ross.geller@gmail.com", True)
+member1 = Member("Ross", "Geller", "1980/01/01", "19 Grove Street, New York", "07770123456", "ross.geller@gmail.com", True)
 members_repository.save(member1)
 
-member2 = Member("Joey", "Tribbiani", "31/03/1984", "121 Love Street, New York", "07770987654", "joey.tribbiani@gmail.com", False)
+member2 = Member("Joey", "Tribbiani", "1984/03/31", "121 Love Street, New York", "07770987654", "joey.tribbiani@gmail.com", False)
 members_repository.save(member2)
 
-member3 = Member("Rachel", "Green", "04/06/1983", "71 The Bowery, New York", "07788648723", "rachel.green@gmail.com", True)
+member3 = Member("Rachel", "Green", "1983,06/04", "71 The Bowery, New York", "07788648723", "rachel.green@gmail.com", True)
 members_repository.save(member3)
 
-member4 = Member("Chandler", "Bing", "08/12/1984", "53 High Road, New York", "07755234876", "chandler.bing@gmail.com", False)
+member4 = Member("Chandler", "Bing", "1984/08/12", "53 High Road, New York", "07755234876", "chandler.bing@gmail.com", False)
 members_repository.save(member4)
 
-member5 = Member("Monica", "Geller", "03/07/1985", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
+member5 = Member("Monica", "Geller", "1985/03/25", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
 members_repository.save(member5)
 
 # Adding in a member to a class
