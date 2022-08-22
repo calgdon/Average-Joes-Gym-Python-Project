@@ -6,6 +6,8 @@ import repositories.members_repository as member_repository
 import repositories.instructor_repository as instructor_repository
 import repositories.location_repository as location_repository
 
+from models.instructor import Instructor
+
 
 instructors_blueprint = Blueprint("instructors", __name__)
 
@@ -31,12 +33,18 @@ def show_single_instructor(id):
 @instructors_blueprint.route("/instructors/<id>/edit")
 def edit_instructor(id):
     instructor = instructor_repository.select(id)
-    return render_template("instructors/edit_location.html", instructor=instructor)
+    return render_template("instructors/edit_instructor.html", instructor=instructor)
 
 
 # Update the instructor
 
-
+@instructors_blueprint.route("/instructors/<id>/edit", methods=["POST"])
+def post_updated_instructor(id):
+    name = request.form["name"]
+    id = id
+    updated_instructor = Instructor(name, id)
+    instructor_repository.update(updated_instructor)
+    return redirect("/locations")
 
 
 # Delete a single instructor
@@ -44,4 +52,21 @@ def edit_instructor(id):
 @instructors_blueprint.route("/instructors/<id>/delete", methods=["GET"])
 def delete_instructor(id):
     instructor_repository.delete(id)
+    return redirect("/instructors")
+
+
+# Add a new instructor
+
+@instructors_blueprint.route("/instructors/new", methods=["GET"])
+def add_instructor():
+    return render_template("instructors/new_instructor.html")
+
+
+# Post new instructor
+
+@instructors_blueprint.route("/instructors/new", methods=["POST"])
+def post_new_instructor():
+    name = request.form["name"]
+    new_instructor = Instructor(name)
+    instructor_repository.save(new_instructor)
     return redirect("/instructors")

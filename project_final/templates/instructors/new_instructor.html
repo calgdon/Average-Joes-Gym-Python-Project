@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="add_new_table">
+
+<form action="/instructors/new" method="post">
+    <label for="name">Instructor Name:</label> <br>
+    <input type="text" id="name" name="name" required><br>
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+{% endblock %}
