@@ -156,3 +156,9 @@ print(check_to_add_member_to_lesson)
 
 number_of_spaces_available = visit_repository.number_of_spaces_available_per_lesson(lesson4)
 print(number_of_spaces_available)
+
+
+# Get all classes that the member is in
+
+all_classes_member1_in = visit_repository.get_all_classes_member_in(member1)
+print(all_classes_member1_in)

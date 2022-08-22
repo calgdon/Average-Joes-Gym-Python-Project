@@ -6,19 +6,21 @@
 <div class="new_item" >
 
 <form action="/visits" method="POST">
+
     <div>
-        <label for="member_id">Member:</label>
-        <select name="member_id" id="member_id">
-            {% for member in members %}
-            <option value="{{ member.id }}">
-                {{ member.first_name }}  {{member.last_name }}
+        <label for="lesson_id">Lesson:</label>
+        <select name="lesson_id" id="lesson_id">
+            {% for lesson in lessons %}
+            <option value="{{ lesson.id }}">
+                {{ lesson.name }}
             </option>
             {% endfor %}
         </select>
     </div>
-    </div>
         <input type="submit">
     </div>
+
+</div>
 
 
 {% endblock %}

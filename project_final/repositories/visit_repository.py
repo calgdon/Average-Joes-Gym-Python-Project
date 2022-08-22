@@ -7,6 +7,9 @@ from models.member import Member
 
 import repositories.lesson_repository as lesson_repository
 import repositories.members_repository as member_repository
+import repositories.location_repository as location_repository
+import repositories.instructor_repository as instructor_repository
+
 
 # Add a member into a lesson
 
@@ -31,11 +34,13 @@ def select_all_members_in_lesson(lesson):
         attendees.append(attendee)
     return attendees
 
+
 # Get the number of members in a certain lesson 
 
 def number_of_members_in_lesson(lesson):
     result = select_all_members_in_lesson(lesson)
     return len(result)
+
 
 # Check if there is space to add member to a lesson
 
@@ -46,6 +51,7 @@ def check_if_member_can_be_added_to_lesson(lesson):
     if space_for_members >= 1:
         return True
 
+
 # Return the number of spaces available
 
 def number_of_spaces_available_per_lesson(lesson):
@@ -53,6 +59,19 @@ def number_of_spaces_available_per_lesson(lesson):
     capacity_of_lesson = lesson_repository.get_capacity(lesson)
     space_for_members = int(capacity_of_lesson) - int(current_members_in_lesson)
     return space_for_members
+
+
+# Get all classes that a member is currently in
+
+def get_all_classes_member_in(member):
+    current_lessons = []
+    sql = "SELECT lesson_id FROM visits WHERE member_id = %s"
+    values = [member.id]
+    results = run_sql(sql, values)
+    for result in results:
+        current_lesson = lesson_repository.select(result[0])
+        current_lessons.append(current_lesson)
+    return current_lessons
 
 
 # Delete all members from a visit by id

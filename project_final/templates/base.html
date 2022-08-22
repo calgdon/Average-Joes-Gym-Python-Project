@@ -5,47 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+    </style>
     <title>Average Joe's Gym - {{ page_title }}</title>
 </head>
 
 <body>
     <header>
-        <h1>Average Joe's Gym</h1>
-        <nav>
-            <ul class="menu">
-                <li><a href="/">Home</a></li>
-                <li>
-                    Members
-                    <ul>
-                        <li><a href="/members"> View All Members</a></li>
-                        <li><a href="/members/new">Add A New Member</a></li>                        
+        <nav role="navigation" class="nav-container">
+            <ul>
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="/members">Members</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="/members/new">Add A New Member</a></li>                        
                     </ul>
                 </li>
-                <li>
-                    Lessons
-                    <ul>
-                        <li><a href="/lessons">View All Lessons</a></li>
-                        <li><a href="/lessons/new">Add A New Lesson</a></li>
+                <li class="nav-item"><a href="/lessons">Lessons</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="/lessons/new">Add A New Lesson</a></li>
                     </ul>
                 </li>
-                <li>
-                    Instructors
-                    <ul>
-                        <li><a href="/instructors">View All Instructors</a></li>
-                        <li><a href="/instructors/new">Add A New Instructor</a></li>
+                <li class="nav-item"><a href="/instructors">Instructors</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="/instructors/new">Add A New Instructor</a></li>
                     </ul>
                 </li>
-                <li>
-                    Locations
-                    <ul>
-                        <li><a href="/locations">View All Locations</a></li>
-                        <li><a href="/locations/new">Add A New Location</a></li>
+                <li class="nav-item"><a href="/locations">Locations</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="/locations/new">Add A New Location</a></li>
                     </ul>
                 </li>
-                 <li>
-                    Lesson Management
-                    <ul>
-                        <li><a href="/visits">Add A Member To A Lesson</a></li>
+                 <li class="nav-item"><a href="/visits">Book A Lesson</a>
                     </ul>
                 </li>
             </ul>
@@ -56,5 +48,15 @@
         {% block content %}
         {% endblock %}
     </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-message">
+            <h3>Average Joe's Gym</h3>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
