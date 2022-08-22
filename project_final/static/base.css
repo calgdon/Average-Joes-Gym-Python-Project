@@ -1,17 +1,10 @@
-
-
-
-HTML CSSResult Skip Results Iframe EDIT ON body {
-    margin: 0;
-    font-family: 'tahoma'
-}
-
 nav {
     margin: 0 auto;
     width: 100%;
     height: auto;
     display: inline-block;
     background: #ffbd19;
+    margin-bottom: 15px;
 }
 
 nav ul {
@@ -29,23 +22,11 @@ nav ul li {
     display: inline-block;
 }
 
-li>a:after {
-    content: ' »';
-}
-
-li>a:only-child:after {
-    content: '';
-}
-
 nav ul li a {
     padding: 10px;
     display: inline-block;
     color: #d2042d;
     text-decoration: none;
-}
-
-nav ul li a:hover {
-    opacity: 0.5;
 }
 
 nav ul li ul {
@@ -65,13 +46,45 @@ nav ul li:hover ul {
     display: block;
 }
 
+.home-container {
+    display: flex;
+    justify-content: space-around;
+}
 
 
+.home-sub-container{
+flex-direction: column;
+margin: 10px;
+}
+
+
+.all-items-displayed {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+}
+
+.individual-items {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: rgb(242, 243, 247);
+    border: rgb(82, 80, 80);
+    text-align: center;
+}
 
 
 
 
 footer {
-        background: #ffbd19;
-        color: #d2042d;
-}
+    margin: 0 auto;
+    display: block;
+    background: #ffbd19;
+    color: #d2042d;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    }
+

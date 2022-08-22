@@ -5,14 +5,15 @@
 <h3>Click On Each Member For More Information</h3>
 
 
-{% for location in locations %}
+<div class="all-items-displayed">
 
-<section>
+{% for location in locations %}
+    <div class="individual-items">
     <a href="/locations/{{ location.id }}">
         <p>{{ location.name }}</p>
     </a>
-</section>
-
-
+    </div>
 {% endfor %}
+</div>
+
 {% endblock %}

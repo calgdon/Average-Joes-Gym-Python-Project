@@ -4,15 +4,15 @@
 <h2>Check Out All Our Average Joe's</h2>
 <h3>Click On Each Member For More Information</h3>
 
+<div class="all-items-displayed">
 
 {% for member in members %}
-
-<section>
+    <div class="individual-items">
     <a href="/members/{{ member.id }}">
         <p>{{ member.first_name }} {{" "}} {{ member.last_name }}</p>
     </a>
-</section>
+    </div>
+    {% endfor %}
+</div>
 
-
-{% endfor %}
 {% endblock %}
