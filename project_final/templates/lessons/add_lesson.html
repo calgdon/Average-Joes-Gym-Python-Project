@@ -4,37 +4,39 @@
 <h2>Add Another Lesson To Avergae Joe's</h2>
 <h3>????????????????????????????????//</h3>
 
-<div class="new_item" >
+<div class="editing_table">
 
-<form action="/lessons/add_lessons" method="POST">
-    <div>
-        <label for="member">Member:</label>
-        <select name="members" id="name">
-            {% for member in members %}
-            <option value="{{ member.first_name }}  {{member.last_name }}">
-                {{ member.first_name }}  {{member.last_name }}
+<form action="/lessons/add" method="post">
+    <label for="name">Lesson Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="time">Time:</label><br>
+    <input type="time" id="time" name="time"><br>
+    <label for="date">Date:</label><br>
+    <input type="date" id="date" name="date"><br>
+
+    <label for="location_id">Location:</label>
+        <select name="location_id" id="location_id">
+            {% for location in locations %}
+            <option value="{{ location.id }}">
+                {{ location.name }}
             </option>
             {% endfor %}
         </select>
     </div>
 
     <div>
-        <label for="lesson">Lesson:</label>
-        <select name="lesson_name" id="name">
-            {% for lesson in lessons %}
-            <option value="{{ lesson.name }}">
-                {{ lesson.name }}
+        <label for="instructor_id">Instructor:</label>
+        <select name="instructor_id" id="instructor_id">
+            {% for instructor in instructors %}
+            <option value="{{ instructor.id }}">
+                {{ instructor.name }}
             </option>
-            {% endfor %}
+            {% endfor %}<br>
         </select>
-    </div>
-        <input type="submit">
-    </div>
-
+    <br><label for="capacity">Lesson Capacity:</label><br>
+    <input type="number" id="capacity" name="capacity"><br>
+    <input type="submit" value="Submit">
+</form>
 </div>
 
-
-
-
-{% endfor %}
 {% endblock %}
