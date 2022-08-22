@@ -27,7 +27,7 @@ def select(id):
 
 def select_all():
     instructors = []
-    sql = "SELECT * FROM instructors"
+    sql = "SELECT * FROM instructors ORDER BY name"
     results = run_sql(sql)
     for result in results:
         instructor = Instructor(result['name'], result['id'])

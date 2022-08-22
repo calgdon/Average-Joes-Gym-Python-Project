@@ -55,8 +55,6 @@ def number_of_spaces_available_per_lesson(lesson):
     return space_for_members
 
 
-
-
 # Delete all members from a visit by id
 
 def delete(id):

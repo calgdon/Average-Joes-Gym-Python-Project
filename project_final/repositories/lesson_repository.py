@@ -42,6 +42,20 @@ def select_all():
     return lessons
 
 
+# Select all lessons and return them in date and time order
+
+def select_all():
+    lessons = []
+    sql = "SELECT * FROM lessons ORDER BY date, time"
+    results = run_sql(sql)
+    for result in results:
+        instructor = instructor_repository.select(result["instructor_id"])
+        location = location_repository.select(result["location_id"])
+        lesson = Lesson(result['name'], result['time'], result['date'], location, instructor, result['capacity'], result['id'])
+        lessons.append(lesson)
+    return lessons
+
+
 # Update a lesson
 
 def update(lesson):

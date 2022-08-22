@@ -30,7 +30,7 @@ def select(id):
 def select_all():
     members = []
 
-    sql = "SELECT * FROM members"
+    sql = "SELECT * FROM members ORDER BY last_name"
     results = run_sql(sql)
     for row in results:
         member = Member(row['first_name'], row['last_name'], row['date_of_birth'], row['address'], row['tel_number'], row['email'], row['platinum_member'], row['id'])

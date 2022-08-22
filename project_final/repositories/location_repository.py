@@ -26,7 +26,7 @@ def select(id):
 
 def select_all():
     locations = []
-    sql = "SELECT * FROM locations"
+    sql = "SELECT * FROM locations ORDER BY name"
     results = run_sql(sql)
     for row in results:
         location = Location(row['name'], row['capacity'], row['id'])
