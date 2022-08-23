@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Add Member To A Lesson</h2>
+<h2>Add {{member.first_name}} {{member.last_name}} To A Lesson</h2>
 
 <div class="new_item" >
 
-<form action="/visits" method="POST">
+<form action="/visits/{{member.id}}" method="POST">
 
     <div>
         <label for="lesson_id">Lesson:</label>

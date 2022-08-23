@@ -35,11 +35,22 @@ def select_all_members_in_lesson(lesson):
     return attendees
 
 
-# Get the number of members in a certain lesson 
+# Get the number of members in a certain lesson
 
 def number_of_members_in_lesson(lesson):
     result = select_all_members_in_lesson(lesson)
     return len(result)
+
+
+# Check which classes have spaces:
+
+def check_which_classes_have_spaces():
+    classes_with_spaces = []
+    lessons = lesson_repository.select_all()
+    for lesson in lessons:
+        if check_if_member_can_be_added_to_lesson(lesson):
+            classes_with_spaces.append(lesson)
+    return classes_with_spaces
 
 
 # Check if there is space to add member to a lesson
@@ -47,7 +58,8 @@ def number_of_members_in_lesson(lesson):
 def check_if_member_can_be_added_to_lesson(lesson):
     current_members_in_lesson = number_of_members_in_lesson(lesson)
     capacity_of_lesson = lesson_repository.get_capacity(lesson)
-    space_for_members = int(capacity_of_lesson) - int(current_members_in_lesson)
+    space_for_members = int(capacity_of_lesson) - \
+        int(current_members_in_lesson)
     if space_for_members >= 1:
         return True
 
@@ -57,7 +69,8 @@ def check_if_member_can_be_added_to_lesson(lesson):
 def number_of_spaces_available_per_lesson(lesson):
     current_members_in_lesson = number_of_members_in_lesson(lesson)
     capacity_of_lesson = lesson_repository.get_capacity(lesson)
-    space_for_members = int(capacity_of_lesson) - int(current_members_in_lesson)
+    space_for_members = int(capacity_of_lesson) - \
+        int(current_members_in_lesson)
     return space_for_members
 
 
@@ -72,6 +85,19 @@ def get_all_classes_member_in(member):
         current_lesson = lesson_repository.select(result[0])
         current_lessons.append(current_lesson)
     return current_lessons
+
+
+# Get all the classes that a member IS NOT currently in:
+
+def get_lessons_member_not_in(member):
+    available_lessons = []
+    sql = "SELECT DISTINCT lesson_id FROM visits WHERE lesson_id NOT IN (SELECT lesson_id FROM visits WHERE member_id = %s)"
+    values = [member.id]
+    results = run_sql(sql, values)
+    for result in results:
+        available_lesson = lesson_repository.select(result[0])
+        available_lessons.append(available_lesson)
+    return available_lessons
 
 
 # Delete all members from a visit by id

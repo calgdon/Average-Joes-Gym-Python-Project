@@ -162,3 +162,9 @@ print(number_of_spaces_available)
 
 all_classes_member1_in = visit_repository.get_all_classes_member_in(member1)
 print(all_classes_member1_in)
+
+
+# Check which classes have spaces
+
+classes = visit_repository.check_which_classes_have_spaces()
+print(classes)
