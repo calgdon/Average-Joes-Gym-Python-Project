@@ -2,15 +2,36 @@
 
 {% block content %}
 
+<div class="home-container">
 
-{{lesson.name}}
-{{lesson.time}}
-{{lesson.date}}
-{{lesson.location.name}}
-{{lesson.instructor.name}}
-{{lesson.capacity}}
+<div class="home-sub-container">
 
-<a href="/lessons/{{ lesson.id }}/edit">Click Here To Edit Lesson</a>
-<a href="/lessons/{{ lesson.id }}/delete">Click Here To Delete Lesson</a>
+<h2>{{lesson.name}}</h2><br>
+{{lesson.time}}<br>
+{{lesson.date}}<br>
+{{lesson.location.name}}<br>
+{{lesson.instructor.name}}<br>
+{{lesson.capacity}}<br>
+
+<a href="/lessons/{{ lesson.id }}/edit">Edit Lesson</a><br>
+<a href="/lessons/{{ lesson.id }}/delete">Delete Lesson</a>
+
+</div>
+
+<div class="home-sub-container">
+<h2> Current Members Enrolled</h2>
+
+{% for member in members %}
+    <!-- <div class="individual-items"> -->
+    <a href="/members/{{ member.id }}">
+        <p> {{ member.first_name }} {{ member.last_name}} </p>
+    </a>
+    <!-- </div> -->
+    {% endfor %}
+</div>
+
+</div>
+
+
 
 {% endblock %}

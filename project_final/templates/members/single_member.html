@@ -1,17 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> {{member.first_name}} {{member.last_name}}</h1>
 
+<div class="home-container">
 
+<div class="home-sub-container">
 
+<h2> {{member.first_name}} {{member.last_name}}</h2>
 
+{{member.date_of_birth}} <br>
+{{member.address}} <br>
+{{member.tel_number}} <br>
+{{member.email}} <br>
+{{member.platinum_member}} <br>
 
-
-<a href="/members/{{ member.id }}/edit">Click Here To Edit {{ member.first_name}} {{member.last_name}}</a>
+<br><a href="/members/{{ member.id }}/edit">Click Here To Edit {{ member.first_name}} {{member.last_name}}</a><br>
 <a href="/members/{{ member.id }}/delete">Click Here To Delete {{ member.first_name}} {{member.last_name}}</a>
 
+</div>
 
+<div class="home-sub-container">
+<h2> Current Lessons</h2>
+
+{% for lesson in lessons %}
+    <!-- <div class="individual-items"> -->
+    <a href="/lessons/{{ lesson.id }}">
+        <p> {{ lesson.name }} </p>
+    </a>
+    <!-- </div> -->
+    {% endfor %}
+</div>
+
+</div>
 
 
 {% endblock %}

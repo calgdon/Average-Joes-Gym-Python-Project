@@ -25,7 +25,8 @@ def members():
 @members_blueprint.route("/members/<id>")
 def show_single_member(id):
     member = member_repository.select(id)
-    return render_template("members/single_member.html", member=member)
+    lessons = visit_repository.get_all_classes_member_in(member)
+    return render_template("members/single_member.html", member=member, lessons=lessons)
 
 
 # Edit a single member
@@ -34,7 +35,6 @@ def show_single_member(id):
 def edit_member(id):
     member = member_repository.select(id)
     return render_template("members/edit_member.html", member=member)
-
 
 
 # Update the member

@@ -24,7 +24,8 @@ def lessons():
 @lessons_blueprint.route("/lessons/<id>")
 def show_lesson(id):
     lesson = lesson_repository.select(id)
-    return render_template("lessons/single_lesson.html", lesson=lesson)
+    members = visit_repository.select_all_members_in_lesson(lesson)
+    return render_template("lessons/single_lesson.html", lesson=lesson, members=members)
 
 
 # Edit a lesson
