@@ -25,6 +25,15 @@ location_repository.save(location2)
 location3 = Location("Green Room", 30)
 location_repository.save(location3)
 
+location4 = Location("Orange Room", 5)
+location_repository.save(location4)
+
+location5 = Location("Pink Room", 10)
+location_repository.save(location5)
+
+location6 = Location("Yellow Room", 15)
+location_repository.save(location6)
+
 # Adding in an instructor
 
 instructor1 = Instructor("Arnold Schwarzenegger")
@@ -39,6 +48,12 @@ instructor_repository.save(instructor3)
 instructor4 = Instructor("Patches O'Houlihan")
 instructor_repository.save(instructor4)
 
+instructor5 = Instructor("Mr Motivator")
+instructor_repository.save(instructor5)
+
+instructor6 = Instructor("Fat Dave")
+instructor_repository.save(instructor6)
+
 # Adding in a lesson
 
 lesson1 = Lesson("Yoga", "09:00", "2022/08/25", location1, instructor1, 20)
@@ -50,8 +65,20 @@ lesson_repository.save(lesson2)
 lesson3 = Lesson("Arobics", "12:00", "2022/08/25", location3, instructor1, 10)
 lesson_repository.save(lesson3)
 
-lesson4 = Lesson("Dodgeball", "14:00", "2022/08/25", location1, instructor4, 10)
+lesson4 = Lesson("Dodgeball", "14:00", "2022/08/25", location1, instructor4, 12)
 lesson_repository.save(lesson4)
+
+lesson5 = Lesson("Assisted Swimming", "09:00", "2022/08/26", location5, instructor5, 20)
+lesson_repository.save(lesson5)
+
+lesson6 = Lesson("Wrench Dodging", "10:00", "2022/08/26", location6, instructor4, 26)
+lesson_repository.save(lesson6)
+
+lesson7 = Lesson("Spin", "11:00", "2022/08/26", location4, instructor5, 30)
+lesson_repository.save(lesson7)
+
+lesson8 = Lesson("Squats", "14:00", "2022/08/26", location3, instructor6, 50)
+lesson_repository.save(lesson8)
 
 #  Adding in a member
 
@@ -69,6 +96,36 @@ members_repository.save(member4)
 
 member5 = Member("Monica", "Geller", "1985/03/25", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
 members_repository.save(member5)
+
+member6 = Member("Phoebe", "Buffay", "1985/03/25", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
+members_repository.save(member6)
+
+member7 = Member("Fun", "Bobby", "1985/03/25", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
+members_repository.save(member7)
+
+member8 = Member("Janice", "Hosenstein", "1985/03/25", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
+members_repository.save(member8)
+
+member9 = Member("Richard", "Burke", "1985/03/25", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
+members_repository.save(member9)
+
+member10 = Member("Charlie", "Wheelar", "1985/03/25", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
+members_repository.save(member10)
+
+member11 = Member("Ursula", "Buffay", "1985/03/25", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
+members_repository.save(member11)
+
+member12 = Member("Amy", "Green", "1985/03/25", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
+members_repository.save(member12)
+
+member13 = Member("Mr", "Heckles", "1985/03/25", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
+members_repository.save(member13)
+
+member14 = Member("Roy The", "Stripper", "1985/03/25", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
+members_repository.save(member14)
+
+member15 = Member("Gunther", "Gunther", "1985/03/25", "12 Central Perk, New York", "07653743298", "monica.geller@gmail.com", False)
+members_repository.save(member15)
 
 # Adding in a member to a class
 
@@ -92,6 +149,18 @@ visit_repository.save(class_member6)
 
 class_member7 = Visit(member5, lesson4)
 visit_repository.save(class_member7)
+
+class_member8 = Visit(member6, lesson6)
+visit_repository.save(class_member8)
+
+class_member9 = Visit(member7, lesson8)
+visit_repository.save(class_member9)
+
+class_member10 = Visit(member8, lesson7)
+visit_repository.save(class_member10)
+
+class_member11 = Visit(member9, lesson5)
+visit_repository.save(class_member11)
 
 
 # Select all members
@@ -174,9 +243,3 @@ print(classes)
 
 result = visit_repository.find_visits_id(member1, lesson1)
 print(result)
-
-
-# select all visits
-
-results = visit_repository.select_all()
-print(results)

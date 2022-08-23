@@ -13,10 +13,21 @@
         {{ lesson.name }} <br>
         {{ lesson.time }} <br>
         {{ lesson.date }} <br>
-        </a></div>
+        </a>
+        <label for="capacity">{{lesson.name}} Spaces Remaining:</label>
+        <progress id="capacity" value="7" max= {{ lesson.capacity }} ></progress>
+    
+    
+    </div>
     {% endfor %}
 
+
+
         </div>
+
+
+
+
 </div>
 
 {% endblock %}
