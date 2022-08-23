@@ -3,7 +3,7 @@
 
 <h2>Edit {{lesson.name}}</h2>
 
-<div class="all-items-displayed">
+<div class="edit-form">
 
 <form action="/lessons/ {{lesson.id}} /edit" method="post">
     <label for="name">Lesson Name:</label><br>
@@ -21,9 +21,6 @@
             </option>
             {% endfor %}
         </select>
-    </div>
-
-    <div>
         <label for="instructor_id">Instructor:</label>
         <select name="instructor_id" id="instructor_id">
             {% for instructor in instructors %}
@@ -32,7 +29,7 @@
             </option>
             {% endfor %}<br>
         </select>
-    <br><label for="capacity">Lesson Capacity:</label><br>
+    <label for="capacity">Lesson Capacity:</label><br>
     <input type="number" id="capacity" name="capacity" value="{{ lesson.capacity }}"><br>
     <input type="submit" value="Submit">
 </form>

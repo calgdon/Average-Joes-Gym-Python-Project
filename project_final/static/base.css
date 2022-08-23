@@ -113,8 +113,19 @@ margin: 10px;
 }
 
 
+.edit-form {
+    justify-content: center;
+    border-radius: 25px;
+    padding: 10px;
+    gap: 10px;
+    width: 200px;
+    background-color: #ffbd19;
+    border: #d2042d;
+
+}
+
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     background: #ffbd19;
