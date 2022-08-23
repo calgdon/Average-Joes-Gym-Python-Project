@@ -47,8 +47,11 @@ nav ul li:hover ul {
 }
 
 .home-container {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
 }
 
 

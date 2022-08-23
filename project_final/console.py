@@ -168,3 +168,9 @@ print(all_classes_member1_in)
 
 classes = visit_repository.check_which_classes_have_spaces()
 print(classes)
+
+
+# 
+
+result = visit_repository.find_visits_id(member1, lesson1)
+print(result)

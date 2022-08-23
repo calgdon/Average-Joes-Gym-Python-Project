@@ -3,27 +3,17 @@
 
 Welcome to Average Joe's Gym. 
 
-<div class="home-container">
+<div class="all-items-displayed">
 
-    <div class="home-sub-container">
         
         {% for lesson in lessons %}
-        <div class="home-sub-sub-container">
+        <div class="individual-items ">
         <a href="/lessons/{{ lesson.id }}">
         {{ lesson.name }} <br>
         {{ lesson.time }} <br>
         {{ lesson.date }} <br>
         </a></div>
     {% endfor %}
-
-    <div class="home-sub-sub-container">
-
-
-
-    </div>
-
-
-
 
         </div>
 </div>

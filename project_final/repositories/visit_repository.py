@@ -74,6 +74,9 @@ def number_of_spaces_available_per_lesson(lesson):
     return space_for_members
 
 
+# Return all the classes and their available spaces
+
+
 # Get all classes that a member is currently in
 
 def get_all_classes_member_in(member):
@@ -100,7 +103,26 @@ def get_lessons_member_not_in(member):
     return available_lessons
 
 
-# Remove a member from a lesson
+
+# Delete by member and lesson id
+
+def delete_by_ids(member, lesson):
+    sql = "DELETE FROM visits WHERE member_id = %s AND lesson_id = %s"
+    values = [member.id, lesson.id]
+    run_sql(sql, values)
+
+
+
+
+def find_visits_id(member, lesson):
+    sql = "SELECT id FROM visits WHERE member_id = %s AND lesson_id = %s"
+    values = [member.id, lesson.id]
+    results = run_sql(sql, values)
+    result = results[0]['id']
+    return result
+
+
+
 
 
 

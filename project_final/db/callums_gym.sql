@@ -45,4 +45,5 @@ CREATE TABLE visits (
     id SERIAL PRIMARY KEY,
     member_id SERIAL NOT NULL REFERENCES members(id) ON DELETE CASCADE,
     lesson_id SERIAL NOT NULL REFERENCES lessons(id) ON DELETE CASCADE
+    -- UNIQUE (member_id, lesson_id)
 );

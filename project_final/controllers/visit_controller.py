@@ -56,3 +56,11 @@ def select_class_for_member(id):
     visit_repository.save(new_visit)
     member = member_repository.select(id)
     return redirect ("/")
+
+
+
+
+@visits_blueprint.route("/visits/<id>/delete", methods=['POST'])
+def delete_task(id):
+    visit_repository.delete(id)
+    return redirect('/')
