@@ -100,6 +100,10 @@ def get_lessons_member_not_in(member):
     return available_lessons
 
 
+# Remove a member from a lesson
+
+
+
 # Delete all members from a visit by id
 
 def delete(id):

@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.lesson import Lesson
 from models.member import Member
+import datetime
 
 import repositories.instructor_repository as instructor_repository
 import repositories.location_repository as location_repository
@@ -24,7 +25,9 @@ def select(id):
         result = results[0]
         instructor = instructor_repository.select(result["instructor_id"])
         location = location_repository.select(result["location_id"])
-        lesson = Lesson(result['name'], result['time'], result['date'], location, instructor, result['capacity'], result['id'])
+        date = datetime.datetime.fromisoformat(str(result['date']))
+        date = datetime.datetime.strftime(date, '%d %b')
+        lesson = Lesson(result['name'], result['time'], date, location, instructor, result['capacity'], result['id'])
     return lesson
 
 
@@ -35,9 +38,11 @@ def select_all():
     sql = "SELECT * FROM lessons"
     results = run_sql(sql)
     for result in results:
+        date = datetime.datetime.fromisoformat(str(result['date']))
+        date = datetime.datetime.strftime(date, '%d %b')
         instructor = instructor_repository.select(result["instructor_id"])
         location = location_repository.select(result["location_id"])
-        lesson = Lesson(result['name'], result['time'], result['date'], location, instructor, result['capacity'], result['id'])
+        lesson = Lesson(result['name'], result['time'], date, location, instructor, result['capacity'], result['id'])
         lessons.append(lesson)
     return lessons
 
@@ -49,9 +54,11 @@ def select_all():
     sql = "SELECT * FROM lessons ORDER BY date, time"
     results = run_sql(sql)
     for result in results:
+        date = datetime.datetime.fromisoformat(str(result['date']))
+        date = datetime.datetime.strftime(date, '%d %b')
         instructor = instructor_repository.select(result["instructor_id"])
         location = location_repository.select(result["location_id"])
-        lesson = Lesson(result['name'], result['time'], result['date'], location, instructor, result['capacity'], result['id'])
+        lesson = Lesson(result['name'], result['time'], date, location, instructor, result['capacity'], result['id'])
         lessons.append(lesson)
     return lessons
 

@@ -87,3 +87,5 @@ def post_new_lesson():
     new_lesson = Lesson(name, time, date, location, instructor, capacity)
     lesson_repository.save(new_lesson)
     return redirect("/lessons")
+
+
