@@ -174,3 +174,9 @@ print(classes)
 
 result = visit_repository.find_visits_id(member1, lesson1)
 print(result)
+
+
+# select all visits
+
+results = visit_repository.select_all()
+print(results)

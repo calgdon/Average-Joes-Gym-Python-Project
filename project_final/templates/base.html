@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='button.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
     <title>Average Joe's Gym - {{ page_title }}</title>
 </head>
 
 <body>
     <header>
+        <h1>Average Joe's Gym</h1>
+        <img src="https://sites.google.com/site/jamesharrysebgym/_/rsrc/1472873645382/config/customLogo.gif?revision=10" alt="logo" />
+
+
+    </header>
         <nav role="navigation" class="nav-container">
             <ul>
                 <li class="nav-item"><a href="/">Home</a></li>
@@ -41,7 +47,7 @@
             </ul>
         </nav>
 
-    </header>
+
     <div class="container">
         {% block content %}
         

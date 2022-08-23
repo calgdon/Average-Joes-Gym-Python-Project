@@ -21,6 +21,22 @@ def save(visit):
     return visit
 
 
+# Select all visits
+
+def select_distinct_lessons():
+    visits = []
+    sql = "SELECT * lesson_id FROM visits"
+    results = run_sql(sql)
+    for result in results:
+        lesson = lesson_repository.select(result['lesson_id'])
+        member = member_repository.select(result['member_id'])
+        visit = Visit(member, lesson, result['id'])
+        print(visit)
+        visits.append(visit)
+    return visits
+
+
+
 # View all members in a certain lesson
 
 def select_all_members_in_lesson(lesson):
@@ -120,6 +136,8 @@ def find_visits_id(member, lesson):
     return result
 
 
+# Get all the bookings by the member id 
+
 def all_booking_by_member(member_id):
     visits = []
     sql = "SELECT * FROM visits WHERE member_id = %s"
@@ -131,6 +149,23 @@ def all_booking_by_member(member_id):
         visit = Visit(member, lesson, result['id'])
         visits.append(visit)
     return visits
+
+
+# Get all the bookings by lesson id
+
+def all_booking_by_lesson(lesson_id):
+    visits = []
+    sql = "SELECT * FROM visits WHERE lesson_id = %s"
+    values = [lesson_id]
+    results = run_sql(sql, values)
+    for result in results:
+        lesson = lesson_repository.select(result['lesson_id'])
+        member = member_repository.select(result['member_id'])
+        visit = Visit(member, lesson, result['id'])
+        visits.append(visit)
+    return visits
+
+
 
 
 # Delete all members from a visit by id

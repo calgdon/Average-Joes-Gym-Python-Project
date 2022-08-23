@@ -25,10 +25,7 @@ def members():
 @members_blueprint.route("/members/<id>")
 def show_single_member(id):
     member = member_repository.select(id)
-    # lessons = visit_repository.get_all_classes_member_in(member)
     visits = visit_repository.all_booking_by_member(id)
-    for v in visits:
-        print(v.__dict__)
     return render_template("members/single_member.html", member=member, visits=visits)
 
 

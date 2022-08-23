@@ -58,6 +58,8 @@ def select_class_for_member(id):
     return redirect ("/")
 
 
+# Delete a visit
+
 
 
 @visits_blueprint.route("/visits/<id>/delete", methods=['GET'])

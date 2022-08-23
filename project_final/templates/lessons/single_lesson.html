@@ -21,13 +21,13 @@
 <div class="home-sub-container">
 <h2> Current Members Enrolled</h2>
 
-{% for member in members %}
+{% for visit in visits %}
     <!-- <div class="individual-items"> -->
-    <a href="/members/{{ member.id }}">
-        <p> {{ member.first_name }} {{ member.last_name}} </p>
+    <a href="/members/{{ visit.member.id }}">
+        <p> {{ visit.member.first_name }} {{ visit.member.last_name}} </p>
     </a>
-    <form action="">
-    <input type="submit" value="Remove From Lesson" />
+    <form action="/visits/{{visit.id}}/delete">
+    <input type="submit" value="Remove From Lesson"/>
     </form>
     {% endfor %}
 </div>
