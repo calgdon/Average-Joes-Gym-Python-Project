@@ -21,14 +21,12 @@
 <div class="home-sub-container">
 <h2> Current Lessons</h2>
 
-{% for lesson in lessons %}
-    <!-- <div class="individual-items"> -->
-    <a href="/lessons/{{ lesson.id }}">
-        <p> {{ lesson.name }} </p>
+{% for visit in visits %}
+    <a href="/lessons/{{ visit.lesson.id }}">
+        <p> {{ visit.lesson.name }} </p>
     </a>
-    <!-- </div> -->
-    <form action="https://google.com">
-    <input type="submit" value="Remove From Lesson" />
+    <form action="/visits/{{visit.id}}/delete">
+    <input type="submit" value="Remove From Lesson"/>
     </form>
     {% endfor %}
 </div>

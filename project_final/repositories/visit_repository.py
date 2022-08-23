@@ -112,8 +112,6 @@ def delete_by_ids(member, lesson):
     run_sql(sql, values)
 
 
-
-
 def find_visits_id(member, lesson):
     sql = "SELECT id FROM visits WHERE member_id = %s AND lesson_id = %s"
     values = [member.id, lesson.id]
@@ -122,8 +120,17 @@ def find_visits_id(member, lesson):
     return result
 
 
-
-
+def all_booking_by_member(member_id):
+    visits = []
+    sql = "SELECT * FROM visits WHERE member_id = %s"
+    values = [member_id]
+    results = run_sql(sql, values)
+    for result in results:
+        lesson = lesson_repository.select(result['lesson_id'])
+        member = member_repository.select(result['member_id'])
+        visit = Visit(member, lesson, result['id'])
+        visits.append(visit)
+    return visits
 
 
 # Delete all members from a visit by id

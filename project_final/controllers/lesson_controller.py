@@ -25,6 +25,7 @@ def lessons():
 def show_lesson(id):
     lesson = lesson_repository.select(id)
     members = visit_repository.select_all_members_in_lesson(lesson)
+    # visits = 
     return render_template("lessons/single_lesson.html", lesson=lesson, members=members)
 
 

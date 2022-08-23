@@ -60,7 +60,7 @@ def select_class_for_member(id):
 
 
 
-@visits_blueprint.route("/visits/<id>/delete", methods=['POST'])
+@visits_blueprint.route("/visits/<id>/delete", methods=['GET'])
 def delete_task(id):
     visit_repository.delete(id)
     return redirect('/')
