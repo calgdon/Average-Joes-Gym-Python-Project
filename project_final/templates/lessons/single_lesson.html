@@ -12,8 +12,13 @@
 <p>Instructor: {{lesson.instructor.name}}</p>
 <p>Capacity: {{lesson.capacity}}</p>
 
-<a href="/lessons/{{ lesson.id }}/edit">Edit {{lesson.name}}</a><br>
-<a href="/lessons/{{ lesson.id }}/delete">Delete {{lesson.name}}</a>
+
+<form action="/lessons/{{ lesson.id }}/edit">
+    <input type="submit" value="Edit {{lesson.name}}" id="submit"/>
+</form>
+<form action="/lessons/{{ lesson.id }}/delete">
+    <input type="submit" value="Delete {{lesson.name}}" id="submit"/>
+</form>
 
 </div>
 

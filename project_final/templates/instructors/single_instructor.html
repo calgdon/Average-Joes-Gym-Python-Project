@@ -9,8 +9,12 @@
 
 <h1> {{instructor.name}} </h1>
 
-<a href="/instructors/{{ instructor.id }}/edit">Edit {{instructor.name}} </a> <br>
-<a href="/instructors/{{ instructor.id }}/delete">Delete {{instructor.name}} </a>
+<form action="/instructors/{{ instructor.id }}/edit">
+    <input type="submit" value="Edit {{instructor.name}}" id="submit"/>
+</form>
+<form action="/instructors/{{ instructor.id }}/delete">
+    <input type="submit" value="Delete {{instructor.name}}" id="submit"/>
+</form>
 
 </div>
 </div>

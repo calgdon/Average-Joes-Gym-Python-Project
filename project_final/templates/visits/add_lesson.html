@@ -11,7 +11,7 @@
 <form action="/visits/{{member.id}}" method="POST">
 
     <div>
-        <label for="lesson_id">Lesson:</label>
+        <label for="lesson_id">Lesson:</label><br>
         <select name="lesson_id" id="lesson_id">
             {% for lesson in lessons %}
             <option value="{{ lesson.id }}">
@@ -20,7 +20,7 @@
             {% endfor %}
         </select>
     </div>
-        <input type="submit">
+        <input type="submit" id="submit">
     </div>
 
 </div>

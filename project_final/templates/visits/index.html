@@ -9,7 +9,7 @@
 
 <form action="/visits" method="POST">
     <div>
-        <label for="member_id">Member:</label>
+        <label for="member_id">Member:</label><br>
         <select name="member_id" id="member_id">
             {% for member in members %}
             <option value="{{ member.id }}">
@@ -17,7 +17,7 @@
             </option>
             {% endfor %}
         </select>
-        <input type="submit">
+        <br><input type="submit" id="submit">
     </div>
 
 

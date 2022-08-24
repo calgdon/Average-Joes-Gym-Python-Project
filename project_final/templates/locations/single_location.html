@@ -9,10 +9,13 @@
 <div class="individual-items">
     <h1> {{location.name}} </h1>
 
-<a href="/locations/{{ location.id }}/edit">Edit {{location.name}}</a><br>
-<a href="/locations/{{ location.id }}/delete">Delete {{location.name}}</a>
 
-
+    <form action="/locations/{{ location.id }}/edit">
+    <input type="submit" value="Edit {{location.name}}" id="submit" />
+</form>
+<form action="/instructors/{{ location.id }}/delete">
+    <input type="submit" value="Delete {{location.name}}" id="submit" />
+</form>
 </div>
 </div>
 

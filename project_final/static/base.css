@@ -84,9 +84,10 @@ body {
     height: auto;
     text-align: center;
     border-radius: 25px;
-    margin: 20px;
+    margin-left: 10px;
+    margin-bottom: 25px;
     width: fit-content;
-    padding: 1px;
+    padding: 10px;
 }
 
 body h1, h2, h3, p {
@@ -178,7 +179,24 @@ select {
     cursor: pointer;
 }
 
+.button {
+    background: #0066A2;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 50px;
+    width: 100px;
+    font: bold15px arial, sans-serif;
+    text-shadow: none;
+}
+
+
+
+
+
+
 footer {
+    border-top: 5px solid #F45140;
     position: fixed;
     bottom: 0;
     width: 100%;

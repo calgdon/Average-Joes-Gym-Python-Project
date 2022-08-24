@@ -1,31 +1,3 @@
-input[type="submit"] {
-}
-
-select {
-    width: 150px;
-    padding: 5px 35px 5px 5px;
-    margin: 15px 0;
-    font-size: 0.8em;
-    -webkit-appearance: none;
-    background: 96% / 15% no-repeat white;
-    font-family: 'Merriweather', serif;
-    border: 1px solid #eee;
-    display: block;
-}
-
-textarea {
-    width: 150px;
-    padding: 5px 35px 5px 5px;
-    margin: 15px 0;
-    font-size: 0.8em;
-    -webkit-appearance: none;
-    background: 96% / 15% no-repeat white;
-    font-family: 'Merriweather', serif;
-    border: 1px solid #eee;
-    display: block;
-}
-
-:focus {
-    outline-color: transparent;
-    outline-style: none;
+.button{
+    color: red;
 }

@@ -65,19 +65,19 @@ lesson_repository.save(lesson2)
 lesson3 = Lesson("Arobics", "12:00", "2022/08/25", location3, instructor1, 10)
 lesson_repository.save(lesson3)
 
-lesson4 = Lesson("Dodgeball", "14:00", "2022/08/25", location1, instructor4, 12)
+lesson4 = Lesson("Wrench Dodging", "14:00", "2022/08/25", location1, instructor4, 12)
 lesson_repository.save(lesson4)
 
-lesson5 = Lesson("Assisted Swimming", "09:00", "2022/08/26", location5, instructor5, 20)
+lesson5 = Lesson("Wrench Ducking", "09:00", "2022/08/26", location5, instructor5, 20)
 lesson_repository.save(lesson5)
 
-lesson6 = Lesson("Wrench Dodging", "10:00", "2022/08/26", location6, instructor4, 26)
+lesson6 = Lesson("Wrench Dipping", "10:00", "2022/08/26", location6, instructor4, 26)
 lesson_repository.save(lesson6)
 
-lesson7 = Lesson("Spin", "11:00", "2022/08/26", location4, instructor5, 30)
+lesson7 = Lesson("Wrench Diving", "11:00", "2022/08/26", location4, instructor5, 30)
 lesson_repository.save(lesson7)
 
-lesson8 = Lesson("Squats", "14:00", "2022/08/26", location3, instructor6, 50)
+lesson8 = Lesson("Dodgeball", "14:00", "2022/08/26", location3, instructor6, 50)
 lesson_repository.save(lesson8)
 
 #  Adding in a member

@@ -13,9 +13,12 @@
 <p>{{member.tel_number}}</p>
 <p>{{member.email}}</p>
 
-<br><a href="/members/{{ member.id }}/edit">Edit {{ member.first_name}} {{member.last_name}}</a><br>
-<a href="/members/{{ member.id }}/delete">Delete {{ member.first_name}} {{member.last_name}}</a>
-
+<form action="/members/{{ member.id }}/edit">
+    <input type="submit" value="Edit {{ member.first_name}} {{member.last_name}}" id="submit"/>
+</form>
+<form action="/members/{{ member.id }}/delete">
+    <input type="submit" value="Delete {{ member.first_name}} {{member.last_name}}" id="submit"/>
+</form>
 </div>
 
 <div class="individual-items">

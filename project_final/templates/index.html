@@ -3,7 +3,7 @@
 
 <div class="top-text">
 <h2>Welcome to Average Joe's Gym Booking Application </h2>
-<h3>Where the Joe's are average and the employee's barely competent</h3>
+<h3>Where the Joe's are average and the employee's are barely competent</h3>
 </div>
 
 
@@ -13,12 +13,12 @@
         {% for dictionary in lesson_and_attendees %}
         <div class="individual-items ">
         <a href="/lessons/{{ dictionary["lesson"].id }}">
-        Class : {{ dictionary["lesson"].name }} <br>
-        Time: {{ dictionary["lesson"].time }} <br>
-        Date: {{ dictionary["lesson"].date }} <br>
-        Capacity: {{ dictionary["lesson"].capacity }} <br>
+        <p>Class : {{ dictionary["lesson"].name }} </p>
+        <p>Time: {{ dictionary["lesson"].time }} </p>
+        <p>Date: {{ dictionary["lesson"].date }} </p>
+        <p>Capacity: {{ dictionary["lesson"].capacity }} </p>
         </a>
-        <label for="capacity">{{ dictionary["lesson"].name }} Current Attendees:</label><br>
+        <label for="capacity"><p>{{ dictionary["lesson"].name }} Current Attendees:</p></label>
         <progress id="capacity" value={{dictionary["current_attendies_number"]}} max= {{dictionary["lesson"].capacity}} ></progress>
     </div>
     {% endfor %}
