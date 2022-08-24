@@ -17,10 +17,23 @@ app.register_blueprint(lessons_blueprint)
 app.register_blueprint(members_blueprint)
 app.register_blueprint(locations_blueprint)
 
+
 @app.route('/')
 def home():
     lessons = lesson_repository.select_all()
-    return render_template('index.html', lessons=lessons)
+    lesson_and_attendees = []
+    for lesson in lessons:
+        lesson_attendees = visit_repository.number_of_members_in_lesson(lesson)
+
+        lesson_dict = {
+            "current_attendies_number": lesson_attendees,
+            "lesson": lesson
+        }
+
+        lesson_and_attendees.append(lesson_dict)
+    print(lesson_and_attendees)
+    return render_template('index.html', lesson_and_attendees=lesson_and_attendees)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

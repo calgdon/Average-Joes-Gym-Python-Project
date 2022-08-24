@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> {{location.name}} </h1>
 
+
+
+<div class="items-container">
+
+<div class="individual-items">
+    <h1> {{location.name}} </h1>
 
 <a href="/locations/{{ location.id }}/edit">Edit {{location.name}}</a><br>
 <a href="/locations/{{ location.id }}/delete">Delete {{location.name}}</a>
 
 
+</div>
+</div>
 
 {% endblock %}

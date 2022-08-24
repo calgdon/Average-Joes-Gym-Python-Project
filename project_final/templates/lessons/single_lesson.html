@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<div class="home-container">
+<div class="items-container">
 
-<div class="home-sub-container">
+<div class="individual-items">
 
 <h2>{{lesson.name}}</h2><br>
 {{lesson.time}}<br>
@@ -18,7 +18,8 @@
 
 </div>
 
-<div class="home-sub-container">
+<div class="individual-items">
+
 <h2> Current Members Enrolled</h2>
 
 {% for visit in visits %}

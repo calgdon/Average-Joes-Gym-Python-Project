@@ -110,6 +110,7 @@ margin: 10px;
     background-color: #ffbd19;
     border: #d2042d;
     text-align: center;
+    height: auto;
 }
 
 
@@ -123,6 +124,26 @@ margin: 10px;
     border: #d2042d;
 
 }
+
+
+progress{
+    height: 30px;
+}
+
+progress#capacity:hover:after {
+    display: inline;
+    content: attr(value);
+}
+
+
+.items-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
 
 footer {
     position: fixed;

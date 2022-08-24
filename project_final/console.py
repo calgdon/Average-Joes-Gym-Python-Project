@@ -51,7 +51,7 @@ instructor_repository.save(instructor4)
 instructor5 = Instructor("Mr Motivator")
 instructor_repository.save(instructor5)
 
-instructor6 = Instructor("Fat Dave")
+instructor6 = Instructor("Kris Kringle")
 instructor_repository.save(instructor6)
 
 # Adding in a lesson

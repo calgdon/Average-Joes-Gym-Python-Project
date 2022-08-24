@@ -7,27 +7,19 @@
 <div class="all-items-displayed">
 
         
-        {% for lesson in lessons %}
+        {% for dictionary in lesson_and_attendees %}
         <div class="individual-items ">
-        <a href="/lessons/{{ lesson.id }}">
-        {{ lesson.name }} <br>
-        {{ lesson.time }} <br>
-        {{ lesson.date }} <br>
+        <a href="/lessons/{{ dictionary["lesson"].id }}">
+        Class : {{ dictionary["lesson"].name }} <br>
+        Time: {{ dictionary["lesson"].time }} <br>
+        Date: {{ dictionary["lesson"].date }} <br>
+        Capacity: {{ dictionary["lesson"].capacity }} <br>
         </a>
-        <label for="capacity">{{lesson.name}} Spaces Remaining:</label>
-        <progress id="capacity" value="7" max= {{ lesson.capacity }} ></progress>
-    
-    
+        <label for="capacity">{{ dictionary["lesson"].name }} Current Attendees:</label><br>
+        <progress id="capacity" value={{dictionary["current_attendies_number"]}} max= {{dictionary["lesson"].capacity}} ></progress>
     </div>
     {% endfor %}
-
-
-
-        </div>
-
-
-
-
+    </div>
 </div>
 
 {% endblock %}
