@@ -8,10 +8,10 @@
 
 <h2> {{member.first_name}} {{member.last_name}}</h2>
 
-{{member.date_of_birth}} <br>
-{{member.address}} <br>
-{{member.tel_number}} <br>
-{{member.email}} <br>
+<p>{{member.date_of_birth}}</p>
+<p>{{member.address}}</p>
+<p>{{member.tel_number}}</p>
+<p>{{member.email}}</p>
 
 <br><a href="/members/{{ member.id }}/edit">Edit {{ member.first_name}} {{member.last_name}}</a><br>
 <a href="/members/{{ member.id }}/delete">Delete {{ member.first_name}} {{member.last_name}}</a>

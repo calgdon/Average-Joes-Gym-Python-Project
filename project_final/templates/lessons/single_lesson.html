@@ -5,13 +5,12 @@
 <div class="items-container">
 
 <div class="individual-items">
-
-<h2>{{lesson.name}}</h2><br>
-{{lesson.time}}<br>
-{{lesson.date}}<br>
-{{lesson.location.name}}<br>
-{{lesson.instructor.name}}<br>
-{{lesson.capacity}}<br>
+<h2>{{lesson.name}}</h2>
+<p>Time: {{lesson.time}}</p>
+<p>Date: {{lesson.date}}</p>
+<p>Lesson: {{lesson.location.name}}</p>
+<p>Instructor: {{lesson.instructor.name}}</p>
+<p>Capacity: {{lesson.capacity}}</p>
 
 <a href="/lessons/{{ lesson.id }}/edit">Edit {{lesson.name}}</a><br>
 <a href="/lessons/{{ lesson.id }}/delete">Delete {{lesson.name}}</a>
