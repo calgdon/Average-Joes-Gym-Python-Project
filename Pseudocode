@@ -1,1 +1,16 @@
-<mxfile host="app.diagrams.net" modified="2022-09-04T10:13:35.897Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" version="20.2.7" etag="CeoHr1a28pjGRWxQ9VmV" type="github"><diagram id="G8bYKwVxytpPQVOZGtcL">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-09-04T10:24:29.896Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="eiZJIHFs9AR-qCIpswOM" version="20.2.7" type="github">
+  <diagram id="G8bYKwVxytpPQVOZGtcL" name="Page-1">
+    <mxGraphModel dx="786" dy="1636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="d38sLlMHYnMPmViHpPR6-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="-90" width="240" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="d38sLlMHYnMPmViHpPR6-2" value="&lt;b&gt;Add Member To A Class&lt;/b&gt;&lt;br&gt;&lt;br&gt;- Select a member - dropdown&lt;br&gt;&lt;br&gt;- Check all classes to see IF each class has spaces - return list of free classes&lt;br&gt;&lt;br&gt;- Check IF member is already enrolled in any of the classes - return list of classes&lt;br&gt;&lt;br&gt;- Present classes that member can be added to - dropdown&lt;br&gt;&lt;br&gt;- Select the class that member will be added to&amp;nbsp;&lt;br&gt;&lt;br&gt;- Add member to the class&lt;br&gt;&lt;br&gt;- Return to the classes home page" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="230" y="-80" width="220" height="340" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
