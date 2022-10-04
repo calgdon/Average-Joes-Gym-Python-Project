@@ -20,3 +20,7 @@ The aim of the project was to create a full stack web application to be utilised
 
 I modelled the web application on Average Joe's Gym from the film Dodgeball.
 
+How to launch the application:
+
+
+
