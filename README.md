@@ -1,7 +1,5 @@
 # Average Joes Gym Booking Application
 
-## About
-
 This solo, full-stack project was undertaken over 6 days on completion of the four week Python module with CodeClan. 
 
 ## Tech Stack
