@@ -53,7 +53,7 @@ All commands to be entered into the Terminal:
     
 3. Create the database:
 
-    - psql -d callums_gym -f db/callums_gym.sql
+    - psql -f callums_gym -f db/callums_gym.sql
     
 4. Populate the database:
 
