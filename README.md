@@ -53,17 +53,21 @@ All commands to be entered into the Terminal:
     
 3. Create the database:
 
+    - createdb callums_gym
+
+4. Initialise the database
+
     - psql -f callums_gym -f db/callums_gym.sql
     
-4. Populate the database:
+5. Populate the database:
 
     - python3 console.py
     
-5. Load the webpage:
+6. Load the webpage:
 
     - flask run
     
-6. Open the webpage by copying http://127.0.0.1:4999/ into your browser
+7. Open the webpage by copying http://127.0.0.1:4999/ into your browser
 
 ## Screenshots
 
