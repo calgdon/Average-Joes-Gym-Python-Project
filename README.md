@@ -78,7 +78,7 @@ All commands to be entered into the Terminal:
 <img width="1280" alt="Screenshot 2022-10-07 at 16 43 39" src="https://user-images.githubusercontent.com/108418393/194594600-eaee4f04-220f-4633-83a8-a6d014ac9cce.png">
 
 ### Select a member to add to a lesson
-<img width="1280" alt="Screenshot 2022-10-07 at 16 42 56" src="https://user-images.githubusercontent.com/108418393/194594837-652ce832-2d69-4cbd-843e-e5e8bae48923.png">
+<img width="1278" alt="Screenshot 2022-10-20 at 13 00 10" src="https://user-images.githubusercontent.com/108418393/196942846-a6fa317a-4a03-4784-a40a-dbeee3155228.png">
 
 ### Select the lesson to add the selected member to
 <img width="1280" alt="Screenshot 2022-10-07 at 16 43 20" src="https://user-images.githubusercontent.com/108418393/194594932-7e753dfb-9c4d-4239-bb18-4bca9ea60d43.png">
